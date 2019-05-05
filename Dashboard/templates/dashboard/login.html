@@ -1,4 +1,6 @@
+{% extends 'base.html' %}
 
+{% block content %}
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -7,12 +9,14 @@
 <link rel="stylesheet" href="{% static 'dashboard/css/style.css' %}"> 
 </head>
 <body>
-<form action="Login" method = "GET" action="{% url 'dashboard' %}">
+<form method = "POST" action="{% url 'login' %}">
 {% csrf_token %}
 <div class="login">
 		<div class="login-screen">
 			<div class="app-title">
+			<br/>
 				<h1>Login</h1>
+				<br/>
 			</div>
 			<div class="login-form">
 				<div class="control-group">
@@ -31,3 +35,11 @@
 </form>
 </body>
 </html>
+
+{% if error%}
+
+<centre>{{ error }}</centre>
+
+{% endif %}
+
+{% endblock %}
