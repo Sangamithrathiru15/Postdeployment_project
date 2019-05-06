@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'Dashboard.apps.DashboardConfig',
     'Pilot.apps.PilotConfig',
+    'Rollout.apps.RolloutConfig',
+    'Basiccheck.apps.BasiccheckConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
