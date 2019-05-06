@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+
 
 {% block content %}
 <html>
@@ -8,6 +8,9 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'dashboard/css/style.css' %}"> 
 </head>
+<script>
+history.forward();
+</script> 
 <body>
 <form method = "POST" action="{% url 'login' %}">
 {% csrf_token %}

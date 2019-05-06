@@ -16,11 +16,15 @@ def login(request):
 
     return render(request,'dashboard/login.html')
 
+
+'''
+we have used auth.login-----so this logout view is not necessary
 def logout(request):
     if request.method == "POST":
         print("logout")
         auth.logout(request)
-        return redirect('login')
+        return render(request,'dashboard/login.html')
+'''
     
 
 def dashboard(request):
