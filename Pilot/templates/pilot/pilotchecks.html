@@ -44,7 +44,7 @@
 <!-- Popup Div Starts Here -->
 <div id="popupContact">
 <!-- Contact Us Form -->
-<form action="#" id="form" method="post" name="form">
+<form action="{% url 'result'%}" id="form" method="post" name="form">
 {% csrf_token %}
 <img id="close" src="{% static 'pilot/images/cancel.png'%}" alt="cancel image" onclick ="div_hide()">
 <h2>Store information</h2>
