@@ -8,8 +8,8 @@ def pilot(request):
     
 
 def extractdata(request):
-    if request.method == "POST":
-        uploaded_file=request.FILES['uploaded_files/checks.csv']
+    #if request.method == "POST":
+        uploaded_file=request.FILES.get['uploaded_files/checks.csv']
         file_reader = csv.reader(uploaded_file, delimiter=',')
         for row in file_reader:
         # do something with row data.
