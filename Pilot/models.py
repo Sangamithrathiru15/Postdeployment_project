@@ -29,12 +29,9 @@ class FileData(models.Model):
 
 
     '''
-    >>> import csv
->>>  import os
-  File "<console>", line 1
-    import os
-    ^
-IndentationError: unexpected indent
+    to populate data into the models.
+    
+>>> import csv
 >>> import os
 >>> path="C:\\Users\\s.thirugnanam\\Desktop\\djangoproject\\Postdepl_check_project"
 >>> os.chdir(path)

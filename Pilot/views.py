@@ -1,31 +1,23 @@
 from django.shortcuts import render
 from django.http import request,HttpResponse
-import csv
-import re
+from  .models import FileData
+
+
 def pilot(request):
     return render(request,'pilot/pilotchecks.html')
 
     
 
-def extractdata(request):
-    #if request.method == "POST":
-        uploaded_file=request.FILES.get['uploaded_files/checks.csv']
-        file_reader = csv.reader(uploaded_file, delimiter=',')
-        for row in file_reader:
-        # do something with row data.
-            print(row)
-        return render(request,'pilot/output.html',{"data":file_reader})
-'''
-        data = uploaded_file.read()
-        rows = re.split('\n', data)
-        for index, row in enumerate(rows):
-            cells = row.split(',')
-        return render(request,'pilot/output.html',{"data":cells})
+def displaydata(request):
+    if request.method=="POST":
+        data=FileData.objects.all()
+        store_status={}
+        for d in data:
+            if (d.progressrjbridge_GB=='1.0.87' and d.commonutilities_GB=='1.0.87' and d.callcentreinstore_GB=='1.0.87' and d.rjsoabridge_GB=='1.0.87' and d.socrates_GB=='1.0.87'
+            and d.retailjstaticdata_UK=='1.13.25' and d.storeserver_GB=='1.5.83' and d.storeprogresscode_GB=='1.4.18'):
+                store_status[d.store_number]="Upgraded"
+                print(store_status[d.store_number])
+            else:
+                store_status[d.store_number]="Not upgraded"
+        return(render(request,'pilot/displaypilot.html',{"info":FileData.objects.all()},store_status))
 
-
-
-def handle_uploaded_file(f):
-    with open('uploaded_files/checks.csv', 'wb+') as destination:
-        for chunk in f.chunks():
-            destination.write(chunk)
-        '''

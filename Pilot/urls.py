@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('',views.pilot,name="pilotcheck"),
-    path('result/',views.extractdata,name="result"),
+    path('result/',views.displaydata,name="result"),
 ]

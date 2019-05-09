@@ -58,7 +58,7 @@ ROOT_URLCONF = 'Postdepl_check.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['Postdepl_check/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

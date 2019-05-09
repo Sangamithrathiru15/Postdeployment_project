@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for store in info%}
+{{store.store_name}}---{{store.store_number}}<br/>
+{{ t=store.store_number}}
+{% ifequal store_status[t] "Upgraded" %}
+ <p>Store successfully upgraded to D2.4.68</p><br/>
+ {% else %}
+ <p>not upgraded</p>
+ {% endifequal %}
+{{store.RHEL_version}}
+{% endfor %}
+{% endblock %}
