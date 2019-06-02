@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('',views.pilot,name="pilotcheck"),
-    path('result/',views.displaydata,name="result"),
+    path('<int:store_num>/result/',views.displaydata,name="result"),
 ]

@@ -23,7 +23,7 @@
 		  <a href="{% url 'rolloutchecks'%}"><i class="fa fa-cog"></i>Rollout Checks</a>
 		  <a href="{% url 'basicchecks'%}"><i class="fa fa-cog"></i>Basic Checks</a>
           <a href="analytics.html"><i class="fa fa-pie-chart"></i>Analytics</a>
-		  <a href="index.html"><i class="fa fa-user"></i>Logout</a>
+		  <a href="{% url 'logout' %}"><i class="fa fa-user"></i>Logout</a>
         </div>
       </div>
       <div class="site-wrapper_top-bar">
@@ -44,12 +44,13 @@
 <!-- Popup Div Starts Here -->
 <div id="popupContact">
 <!-- Contact Us Form -->
-<form action="{% url 'result'%}" id="form" method="post" name="form">
+<form action="{% url 'result' 40 %}" id="form" method="post" name="form">
 {% csrf_token %}
 <img id="close" src="{% static 'pilot/images/cancel.png'%}" alt="cancel image" onclick ="div_hide()">
 <h2>Store information</h2>
-&nbsp;&nbsp;&nbsp;&nbsp;<input id="name" name="name" placeholder="Store Number" type="text"><br><br>
-<input type="submit" value="submit" id="submit" onclick="check_text()">
+
+<input type="text" name="storenum" placeholder="Store Number"><br><br>
+<input type="submit" value="submit" id="submit" onclick="{% url 'result' 40 %}">
 </form>
 </div>
 <!-- Popup Div Ends Here -->

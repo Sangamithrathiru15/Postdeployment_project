@@ -29,6 +29,7 @@
 							Checks</a> <a href="{% url 'rolloutchecks'%}"><i class="fa fa-cog"></i>Rollout
 							Checks</a> <a href="{% url 'basicchecks'%}"><i class="fa fa-cog"></i>Basic
 							Checks</a> <a href="analytics.html"><i class="fa fa-pie-chart"></i>Analytics</a>
+							    
 						<a href="{% url 'logout' %}"><i class="fa fa-user"></i>Logout</a>
 					</div>
 				</div>
@@ -36,12 +37,15 @@
 					<img src="{% static 'dashboard/images/Specsavers.png' %}" height="50" />
 				</div>
             </div>
-        </div>
+			<div class="row">
+        {% block content %}
+		
+		{% endblock %}
+		</div>
+		</div>
     </div>
 	</form>
 	{% endif %}
-    {% block content%}
 
-    {% endblock %}
 </body>
 </html>

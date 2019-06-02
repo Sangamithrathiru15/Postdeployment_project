@@ -54,11 +54,11 @@
 <!-- Popup Div Starts Here -->
 <div id="popupContact">
 <!-- Contact Us Form -->
-<form action="#" id="form" method="post" name="form">
+<form action="{% url 'rollout-display' 120 %}" id="form" method="post" name="form">
 {% csrf_token %}
 <img id="close" src="{% static 'rollout/images/cancel.png' %}" alt="cancel image" onclick ="div_hide()">
 <h2>Store information</h2>&nbsp;&nbsp;&nbsp;&nbsp;<input id="name" name="name" placeholder="Store Number" type="text"><br><br>
-<input type="submit" value="submit" id="submit" onclick="check_text()">
+<input type="submit" value="submit" id="submit" onclick="{% url 'rollout-display' 120 %}">
 </form>
 </div>
 <!-- Popup Div Ends Here -->
